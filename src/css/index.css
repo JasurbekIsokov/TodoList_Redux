@@ -109,3 +109,29 @@
 }
 
 /* /Save button */
+
+/* Responsive */
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}
