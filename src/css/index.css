@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(1.04);
+}
+
+.container {
+  width: 42%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+.title_todo_sum {
+  padding: 10px;
+}
+
+/* Form */
+
+.my_form {
+  width: 100%;
+  height: 100px;
+  background-color: #ffff;
+  border: 1px solid #d0d0d0;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.write_data {
+  width: 80%;
+  height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.btn_add {
+  padding: 8px 15px;
+  color: #ffff;
+  background-color: rgb(0, 128, 68);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* /Form */
+
+/* Cards */
+
+.cards {
+  background-color: #ffff;
+  font-size: 18px;
+}
+
+.card {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #d0d0d0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.delete_btn {
+  padding: 8px 15px;
+  border: none;
+  color: #f0f0f0;
+  background-color: red;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.check_btn {
+  margin-right: 10px;
+}
+
+/* /Cards */
+
+/* Save button */
+
+.save_local_storage {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.save_btn {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: #ffff;
+  font-size: 16px;
+}
+
+/* /Save button */
