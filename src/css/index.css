@@ -90,6 +90,12 @@
 
 /* /Cards */
 
+.not_todos_text {
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
+}
+
 /* Save button */
 
 .save_local_storage {

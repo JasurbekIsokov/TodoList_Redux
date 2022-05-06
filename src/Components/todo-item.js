@@ -1,9 +1,9 @@
-const TodoItem = () => {
+const TodoItem = ({ text, id }) => {
   return (
     <div className="card">
       <div className="card_left">
         <input className="check_btn btn" type={"checkbox"} />
-        <label>list paragraph</label>
+        <label>{text}</label>
       </div>
       <button className="delete_btn btn">Delete</button>
     </div>

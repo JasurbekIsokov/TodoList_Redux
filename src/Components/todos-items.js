@@ -7,9 +7,13 @@ const TodosItems = () => {
 
   return (
     <div className="cards">
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      {todos.length > 0 ? (
+        todos.map((item) => (
+          <TodoItem text={item.text} id={item.id} key={item.id} />
+        ))
+      ) : (
+        <p className="not_todos_text">Todos not created yet</p>
+      )}
     </div>
   );
 };
