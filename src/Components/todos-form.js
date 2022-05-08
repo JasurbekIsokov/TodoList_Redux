@@ -1,8 +1,9 @@
 import { useRef } from "react";
+import { useDispatch } from "react-redux";
 
 const TodosForm = () => {
   const inputRef = useRef(null);
-
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputRef.current.value);
