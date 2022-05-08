@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import TodosHeader from "./todos-header";
 import TodosForm from "./todos-form";
@@ -7,24 +8,25 @@ import TodosFooter from "./todos-footer";
 
 import index from "../css/index.css";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="container">
-        <TodosHeader />
-        {/* <div className="title_todo_sum">
+function App() {
+  const todoItems = useSelector((state) => state.todos);
+
+  return (
+    <div className="container">
+      <TodosHeader length={todoItems.length} />
+      {/* <div className="title_todo_sum">
           <h1 className="todo_sum">Todos: </h1>
         </div> */}
 
-        <TodosForm />
-        {/* <form className="my_form">
+      <TodosForm />
+      {/* <form className="my_form">
           <input className="write_data" />
           <button className="btn_add btn">Add</button>
         </form> */}
 
-        <TodosItems />
-        {/* <div className="cards"> */}
-        {/* <div className="card">
+      <TodosItems />
+      {/* <div className="cards"> */}
+      {/* <div className="card">
             <div className="card_left">
               <input className="check_btn btn" type={"checkbox"} />
               <label>list paragraph</label>
@@ -38,15 +40,14 @@ class App extends React.Component {
             </div>
             <button className="delete_btn btn">Delete</button>
           </div> */}
-        {/* </div> */}
+      {/* </div> */}
 
-        <TodosFooter />
-        {/* <div className="save_local_storage">
+      <TodosFooter />
+      {/* <div className="save_local_storage">
           <button className="save_btn btn">Save</button>
         </div> */}
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
