@@ -9,6 +9,10 @@ const todos = (state = initialState, action) => {
 
     case TODO.REMOVE_TODO:
       return state.filter((item) => item.id !== action.payload.id);
+
+    case TODO.INITIAL_STATE:
+      return action.payload;
+
     default:
       return state;
   }

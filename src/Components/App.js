@@ -1,19 +1,26 @@
-import React from "react";
-import { useSelector } from "react-redux";
+// import React from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
+import { storageTodos } from "../actions/todos";
 import TodosHeader from "./todos-header";
 import TodosForm from "./todos-form";
 import TodosItems from "./todos-items";
 import TodosFooter from "./todos-footer";
 
-import index from "../css/index.css";
+// import index from "../css/index.css";
 
 function App() {
+  const dispatch = useDispatch();
   const todoItems = useSelector((state) => state.todos);
+
+  useEffect(() => {
+    // dispatch(storageTodos(JSON.parse(localStorage.getItem("todos"))));
+  }, []);
 
   return (
     <div className="container">
-      <TodosHeader length={todoItems.length} />
+      <TodosHeader todoLength={todoItems.length} />
       {/* <div className="title_todo_sum">
           <h1 className="todo_sum">Todos: </h1>
         </div> */}
