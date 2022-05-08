@@ -1,16 +1,15 @@
-const initialState = [
-  {
-    id: 1,
-    text: "First product",
-  },
-  {
-    id: 2,
-    text: "Second product",
-  },
-];
+import TODO from "../constants/todos";
+
+const initialState = [];
 
 const todos = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case TODO.ADD_TODO:
+      return [...state, action.payload];
+
+    default:
+      return state;
+  }
 };
 
 export default todos;
