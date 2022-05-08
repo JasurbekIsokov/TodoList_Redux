@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
-import addTodo from "../actions/todos";
+import { addTodo } from "../actions/todos";
 
 const TodosForm = () => {
   const inputRef = useRef(null);
