@@ -26,3 +26,26 @@ export const storageTodos = (todos) => {
     payload: todos,
   };
 };
+
+const fetchAllData = async (dispatch) => {
+  try {
+    const data = await fetch("http://localhost:3004/todos");
+    const dataParse = await data.json();
+    console.log(dataParse);
+    return dispatch({
+      type: TODO.TODO_ALL_SUCCESS,
+      payload: dataParse,
+    });
+  } catch (err) {
+    return dispatch({
+      type: TODO.TODO_ALL_FAIL,
+      payload: err.message,
+    });
+  }
+};
+export const getAllTodos = () => async (dispatch) => {
+  dispatch({
+    type: TODO.TODO_ALL_REQUST,
+  });
+  fetchAllData(dispatch);
+};

@@ -1,21 +1,28 @@
 // import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import "../css/index.css";
 
-import { storageTodos } from "../actions/todos";
+import { getAllTodos } from "../actions/todos";
 import TodosHeader from "./todos-header";
 import TodosForm from "./todos-form";
 import TodosItems from "./todos-items";
 import TodosFooter from "./todos-footer";
 
 // import index from "../css/index.css";
-
+// json-server --watch db.json
 function App() {
   const dispatch = useDispatch();
-  const todoItems = useSelector((state) => state.todos);
+  const todoItems = useSelector((state) => state.todoR.todos);
+  console.log(useSelector((state) => state));
 
+  const fetchData = async () => {
+    dispatch(getAllTodos());
+  };
   useEffect(() => {
-    // dispatch(storageTodos(JSON.parse(localStorage.getItem("todos"))));
+    //dispatch(storageTodos(JSON.parse(localStorage.getItem("todos"))));
+
+    fetchData();
   }, []);
 
   return (
