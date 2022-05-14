@@ -38,3 +38,58 @@ export const todoReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+const addInitialState = {
+  loading: false,
+  success: false,
+  error: null,
+};
+
+export const addTodoReducer = (state = addInitialState, action) => {
+  switch (action.type) {
+    case TODO.TODO_ADD_REQUEST:
+      return {
+        loading: true,
+        success: false,
+        error: null,
+      };
+    case TODO.TODO_ADD_SUCESS:
+      return {
+        loading: false,
+        success: true,
+        error: null,
+      };
+    case TODO.TODO_ADD_FAIL:
+      return {
+        loading: false,
+        success: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const deleteTodoReducer = (state = addInitialState, action) => {
+  switch (action.type) {
+    case TODO.TODO_DELETE_REQUEST:
+      return {
+        loading: true,
+        success: false,
+        error: null,
+      };
+    case TODO.TODO_DELETE_SUCESS:
+      return {
+        loading: false,
+        success: true,
+        error: null,
+      };
+    case TODO.TODO_DELETE_FAIL:
+      return {
+        loading: false,
+        success: false,
+        error: action.payload,
+      };
+  }
+  return state;
+};

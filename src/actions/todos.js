@@ -1,7 +1,17 @@
 import TODO from "../constants/todos";
+import axios from "axios";
 
-export const addTodo = (todoItem) => {
-  console.log(todoItem);
+// Todo qo'shish
+export const addTodo = (todoItem) => async (dispatch) => {
+  dispatch({
+    type: TODO.TODO_ADD_REQUEST,
+  });
+  try {
+    const { data } = await axios.post("http://localhost:3004/todos", todoItem);
+    dispatch({ type: TODO.TODO_ADD_SUCESS });
+  } catch (error) {
+    dispatch({ type: TODO.TODO_ADD_FAIL, payload: error.message });
+  }
 
   return {
     type: TODO.ADD_TODO,
@@ -10,28 +20,35 @@ export const addTodo = (todoItem) => {
     },
   };
 };
+// /Todo qo'shish
 
-export const removeTodo = (id) => {
+// Todoni O'chirish
+export const deleteTodo = (id) => async (dispatch) => {
+  dispatch({
+    type: TODO.TODO_DELETE_REQUEST,
+  });
+  try {
+    const { data } = await axios.delete(`http://localhost:3004/todos/${id}`);
+    console.log(data);
+    dispatch({ type: TODO.TODO_DELETE_SUCESS });
+  } catch (error) {
+    dispatch({ type: TODO.TODO_DELETE_FAIL, payload: error.message });
+  }
+
   return {
-    type: TODO.REMOVE_TODO,
+    type: TODO.DELETE_TODO,
     payload: {
       id,
     },
   };
 };
-
-export const storageTodos = (todos) => {
-  return {
-    type: TODO.INITIAL_STATE,
-    payload: todos,
-  };
-};
+// /Todoni O'chirish
 
 const fetchAllData = async (dispatch) => {
   try {
     const data = await fetch("http://localhost:3004/todos");
     const dataParse = await data.json();
-    console.log(dataParse);
+
     return dispatch({
       type: TODO.TODO_ALL_SUCCESS,
       payload: dataParse,
@@ -43,6 +60,7 @@ const fetchAllData = async (dispatch) => {
     });
   }
 };
+
 export const getAllTodos = () => async (dispatch) => {
   dispatch({
     type: TODO.TODO_ALL_REQUST,
