@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import "antd/dist/antd.css";
+import { Spin } from "antd";
+
 import "../css/index.css";
 
 import { getAllTodos } from "../actions/todos";
@@ -27,7 +30,9 @@ function App() {
       <TodosHeader todoLength={todoData.todos.length} />
       <TodosForm />
       {todoData.loading === true ? (
-        <div className="center">Loading...</div>
+        <div className="example">
+          <Spin />
+        </div>
       ) : todoData.error ? (
         <div className="errorMessage">{todoData.error}</div>
       ) : (

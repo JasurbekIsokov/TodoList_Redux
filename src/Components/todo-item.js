@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { Spin } from "antd";
 
 import { deleteTodo } from "../actions/todos";
 
@@ -13,7 +14,9 @@ const TodoItem = ({ text, id }) => {
       {deleteTodoR.error !== null ? (
         <div>{deleteTodoR.error}</div>
       ) : deleteTodoR.loading == true ? (
-        <div className="center">loading...</div>
+        <div className="center">
+          <Spin />
+        </div>
       ) : (
         <>
           <div className="card_left">

@@ -1,28 +1,13 @@
 {
   "todos": [
     {
-      "text": "Todo 1",
-      "id": 1652548132527,
+      "text": "",
+      "id": 1652621950252,
       "isDone": false
     },
     {
-      "text": "Todo 2",
-      "id": 1652548137131,
-      "isDone": false
-    },
-    {
-      "text": "Todo 3",
-      "id": 1652548140224,
-      "isDone": false
-    },
-    {
-      "text": "Todo 4",
-      "id": 1652548143302,
-      "isDone": false
-    },
-    {
-      "text": "Todo 5",
-      "id": 1652548146606,
+      "text": "",
+      "id": 1652621954410,
       "isDone": false
     }
   ]
