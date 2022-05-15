@@ -27,9 +27,9 @@ function App() {
       <TodosHeader todoLength={todoData.todos.length} />
       <TodosForm />
       {todoData.loading === true ? (
-        <div>yuklanmoqda...</div>
+        <div className="center">Loading...</div>
       ) : todoData.error ? (
-        <div>{todoData.error}</div>
+        <div className="errorMessage">{todoData.error}</div>
       ) : (
         <TodosItems />
       )}

@@ -31,11 +31,16 @@ const TodosForm = () => {
 
   return (
     <form className="my_form" onSubmit={handleSubmit} ref={formRef}>
-      <input className="write_data" ref={inputRef} />
-      <button className="btn_add btn" disabled={addTodoR.loading}>
-        Add
-      </button>
-      {addTodoR.error !== null && <div>{addTodoR.error}</div>}
+      {addTodoR.error !== null ? (
+        <div className="errorAdd">{addTodoR.error}</div>
+      ) : (
+        <>
+          <input className="write_data" ref={inputRef} />
+          <button className="btn_add btn" disabled={addTodoR.loading}>
+            Add
+          </button>
+        </>
+      )}
     </form>
   );
 };

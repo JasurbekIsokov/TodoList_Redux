@@ -13,7 +13,7 @@ const TodoItem = ({ text, id }) => {
       {deleteTodoR.error !== null ? (
         <div>{deleteTodoR.error}</div>
       ) : deleteTodoR.loading == true ? (
-        <div>loading...</div>
+        <div className="center">loading...</div>
       ) : (
         <>
           <div className="card_left">

@@ -151,3 +151,30 @@
     width: 100%;
   }
 }
+
+/* Error */
+
+.site-result-demo-error-icon {
+  color: red;
+}
+
+.errorAdd,
+.errorMessage {
+  width: 100%;
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+
+.errorMessage {
+  margin-top: 20px;
+}
+/* /Error */
+
+.center {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: coral;
+  padding-top: 20px;
+}
